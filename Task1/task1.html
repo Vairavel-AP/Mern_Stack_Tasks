@@ -1,69 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Customer Survey Form</title>
+
     <style>
-        form{
-            font-family: sans-serif;
-            font-weight: bold;            
-            padding-left: 50px;
+        body {
+            font-family: Arial, sans-serif;
         }
-        input{
-            margin-right: 15px;
-            margin-top: 5px;
+
+        form {
+            width: 700px;
+            margin: 20px auto;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .star {
+            color: orange;
+            font-size: 22px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 250px;
             height: 30px;
+            margin-top: 5px;
+            margin-bottom: 10px;
         }
-        label::after{
-            content: " *";
-            color: red;
+
+        .name-box {
+            display: inline-block;
+            margin-right: 10px;
         }
-        
+
+        .small-text {
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        th {
+            font-size: 14px;
+            font-weight: normal;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .gray {
+            background-color: #f1f1f1;
+        }
     </style>
 </head>
-<body>
-    <form action="">
-            <label for="name">Name</label><br>
-            <div style="display: inline-block; vertical-align: top; margin-right: 10px;">
-                <input type="text" style="display: block; width: 160px; height: 30px;" id="name">
-                <span style="font-size: 13px; font-weight: normal;">First</span>
-            </div>
-            <div style="display: inline-block; vertical-align: top;">
-                <input type="text" style="display: block; width: 160px; height: 30px;">
-            <span style="font-size: 13px; font-weight: normal;">Last</span>
-</div>
-            <br><br>
-            <label for="">Email</label>
-            <br>
-            <input type="email" name="" id="" style="width: 370px;">
-            <br><br>
-            <label for="">Your Experience</label>
-            <br>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#f6c492 " class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>  
-</svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#f6c492 " class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-  
-</svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#f6c492 " class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-  
-</svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#f6c492 " class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-  
-</svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#f6c492 " class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-  
-</svg>
-    <p style="font-family: none; font-weight: normal; font-size: small;">Overall, how would you rate your experience with us?</p>
 
-    <label>How satisfied are you with</label>
-    <table style="font-weight: normal ;" cellpadding="10px" cellspacing="0px">
-        <thead>
+<body>
+
+    <form>
+
+        <!-- Name -->
+
+        <label>Name <span style="color:red;">*</span></label>
+        <br><br>
+
+        <div class="name-box">
+            <input type="text">
+            <br>
+            <span class="small-text">First</span>
+        </div>
+
+        <div class="name-box">
+            <input type="text">
+            <br>
+            <span class="small-text">Last</span>
+        </div>
+
+        <br><br>
+
+        <!-- Email -->
+
+        <label>Email <span style="color:red;">*</span></label>
+        <br><br>
+
+        <input type="email" style="width:520px;">
+
+        <br><br>
+
+        <!-- Experience -->
+
+        <!-- Experience -->
+
+        <label>Your Experience <span style="color:red;">*</span></label>
+
+        <br><br>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2107/2107957.png" alt="star" width="20px" height="20px">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2107/2107957.png" alt="star" width="20px" height="20px">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2107/2107957.png" alt="star" width="20px" height="20px">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2107/2107957.png" alt="star" width="20px" height="20px">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2107/2107957.png" alt="star" width="20px" height="20px">
+
+        <p style="font-size:14px;">
+            Overall, how would you rate your experience with us?
+        </p>
+        <!-- Satisfaction Table -->
+
+        <label>How satisfied are you with <span style="color:red;">*</span></label>
+
+        <table border="0">
+
             <tr>
                 <th></th>
                 <th>Very Unsatisfied</th>
@@ -72,45 +137,47 @@
                 <th>Satisfied</th>
                 <th>Very Satisfied</th>
             </tr>
-        </thead>
-        <tbody>
-            <tr style="background-color: rgba(223, 217, 210, 0.493);">
-                <td>Purchase</td>
-                <td align="center">
-                    <input type="radio" name="purchase" >
-                </td>
-                <td align="center"><input type="radio" name="purchase" ></td>
-                <td align="center"><input type="radio" name="purchase" ></td>
-                <td align="center"><input type="radio" name="purchase" ></td>
-                <td align="center"><input type="radio" name="purchase" ></td>
-            </tr>
-            <tr style="background-color: rgb(255, 255, 255);">
-                <td>Service</td>
-                <td align="center">
-                    <input type="radio" name="ser" >
-                </td>
-                <td align="center"><input type="radio" name="ser" ></td>
-                <td align="center"><input type="radio" name="ser" ></td>
-                <td align="center"><input type="radio" name="ser" ></td>
-                <td align="center"><input type="radio" name="ser" ></td>
-            </tr>
-            <tr style="background-color: rgba(223, 217, 210, 0.493);">
-                <td>Company Overall</td>
-                <td align="center">
-                    <input type="radio" name="a" >
-                </td>
-                <td align="center"><input type="radio" name="a" ></td>
-                <td align="center"><input type="radio" name="a" ></td>
-                <td align="center"><input type="radio" name="a" ></td>
-                <td align="center"><input type="radio" name="a" ></td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
 
-    <label>How likely are you to</label>
-    <table style="font-weight: normal ;" cellpadding="17px" cellspacing="0px" >
-        <thead>
+            <tr class="gray">
+                <td class="left">Purchase</td>
+
+                <td><input type="radio" name="purchase"></td>
+                <td><input type="radio" name="purchase"></td>
+                <td><input type="radio" name="purchase"></td>
+                <td><input type="radio" name="purchase"></td>
+                <td><input type="radio" name="purchase"></td>
+            </tr>
+
+            <tr>
+                <td class="left">Service</td>
+
+                <td><input type="radio" name="service"></td>
+                <td><input type="radio" name="service"></td>
+                <td><input type="radio" name="service"></td>
+                <td><input type="radio" name="service"></td>
+                <td><input type="radio" name="service"></td>
+            </tr>
+
+            <tr class="gray">
+                <td class="left">Company Overall</td>
+
+                <td><input type="radio" name="company"></td>
+                <td><input type="radio" name="company"></td>
+                <td><input type="radio" name="company"></td>
+                <td><input type="radio" name="company"></td>
+                <td><input type="radio" name="company"></td>
+            </tr>
+
+        </table>
+
+        <br><br>
+
+        <!-- Likely Table -->
+
+        <label>How likely are you to <span style="color:red;">*</span></label>
+
+        <table border="0">
+
             <tr>
                 <th></th>
                 <th>Very Unlikely</th>
@@ -119,40 +186,45 @@
                 <th>Likely</th>
                 <th>Very Likely</th>
             </tr>
-        </thead>
-        <tbody>
-            <tr style="background-color: rgba(223, 217, 210, 0.493);">
-                <td>Buy from us again</td>
-                <td align="center">
-                    <input type="radio" name="buy" >
-                </td>
-                <td align="center"><input type="radio" name="buy" ></td>
-                <td align="center"><input type="radio" name="buy" ></td>
-                <td align="center"><input type="radio" name="buy" ></td>
-                <td align="center"><input type="radio" name="buy" ></td>
+
+            <tr class="gray">
+                <td class="left">Buy from us again</td>
+
+                <td><input type="radio" name="buy"></td>
+                <td><input type="radio" name="buy"></td>
+                <td><input type="radio" name="buy"></td>
+                <td><input type="radio" name="buy"></td>
+                <td><input type="radio" name="buy"></td>
             </tr>
-            <tr style="background-color: rgb(255, 255, 255); ">
-                <td>Recommend our <br>product to others</td>
-                <td align="center">
-                    <input type="radio" name="re" >
+
+            <tr>
+                <td class="left">
+                    Recommend our <br> product to others
                 </td>
-                <td align="center"><input type="radio" name="re" ></td>
-                <td align="center"><input type="radio" name="re" ></td>
-                <td align="center"><input type="radio" name="re" ></td>
-                <td align="center"><input type="radio" name="re" ></td>
+
+                <td><input type="radio" name="product"></td>
+                <td><input type="radio" name="product"></td>
+                <td><input type="radio" name="product"></td>
+                <td><input type="radio" name="product"></td>
+                <td><input type="radio" name="product"></td>
             </tr>
-            <tr style="background-color: rgba(223, 217, 210, 0.493);">
-                <td>Recommend our <br>company to others</td>
-                <td align="center">
-                    <input type="radio" name="b" >
+
+            <tr class="gray">
+                <td class="left">
+                    Recommend our <br> company to others
                 </td>
-                <td align="center"><input type="radio" name="b" ></td>
-                <td align="center"><input type="radio" name="b" ></td>
-                <td align="center"><input type="radio" name="b" ></td>
-                <td align="center"><input type="radio" name="b" ></td>
+
+                <td><input type="radio" name="recommend"></td>
+                <td><input type="radio" name="recommend"></td>
+                <td><input type="radio" name="recommend"></td>
+                <td><input type="radio" name="recommend"></td>
+                <td><input type="radio" name="recommend"></td>
             </tr>
-        </tbody>
-    </table>
+
+        </table>
+
     </form>
+
 </body>
+
 </html>
